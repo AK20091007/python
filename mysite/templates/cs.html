@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+</head>
+<body>
+    <h1>This is another HTML file</h1>
+    <h3>{{ name }}</h3>
+    <hr>
+    <h3>{{ scores }}</h3>
+    <h3>{{ scores.0 }}</h3>
+    <h3>{{ scores.1 }}</h3>
+    <h3>{{ scores.2 }}</h3>
+
+    {% for score in scores %}
+        <h4>{{ score }}</h4>
+    {% endfor%}
+    <hr>
+    <h3>{{ info.name }}</h3>
+    <h3>{{ info.age }}</h3>
+
+    {% for item in info.keys %}
+        <h4>{{ item }}</h4>
+    {% endfor%}
+
+    {% for item in info.values %}
+        <h4>{{ item }}</h4>
+    {% endfor%}
+
+    {% for key,value in info.items %}
+        <h4>{{ key }}: {{value}}</h4>
+    {% endfor%}
+    <hr>
+
+    {% if name == "Tom" %}
+        <h3>The name is Tom</h3>
+    {% else %}
+        <h3>The name is not Tom</h3>
+    {% endif %}
+    
+
+    <img src="{% static 'python.jpg' %}" alt="">
+</body>
+</html>
